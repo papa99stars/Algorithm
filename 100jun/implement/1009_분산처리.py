@@ -30,14 +30,3 @@ for _ in range(T):
             print((a**4) % 10 % 10 % 10)
         else:
             print((a**b) % 10 % 10 % 10)
-
-
-# 내장 함수에 대해 알아두기 
-# # 2 
-# n = int(input())
-# for i in range(n):
-#     a,b = map(int, input().split())
-#     answer  =  pow(a,b,10)
-#     if answer == 0:
-#         answer = 10
-#     print(answer)            
