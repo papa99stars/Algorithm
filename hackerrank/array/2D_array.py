@@ -13,8 +13,10 @@ import sys
 
 def hourglassSum(arr):
     maxSum = -63
-    for i in range(4):
-        for j in range(4):
+    width = len(arr[0]) - 2
+    length = len(arr[1]) - 2
+    for i in range(0,width):
+        for j in range(0,length):
         
             # sum of top 3 elements
             top = sum(arr[i][j:j+3])         
