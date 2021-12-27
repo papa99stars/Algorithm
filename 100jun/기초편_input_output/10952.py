@@ -13,6 +13,6 @@ while 1:
     a,b = map(int, input().split())
     if a+b == 0:
         break
-    if a == False or b==False:
+    if a == False or b == False:
         break
     print(a+b)
