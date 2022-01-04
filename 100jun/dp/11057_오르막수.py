@@ -11,6 +11,8 @@ for i in range(2, 1001):
     for j in range(10):
         for k in range(j + 1):
             s[i][j] += s[i - 1][k]
-
+# s[2][0] += s[1][0]
+# s[2][1] += s[1][0~1] 끝 자리수가 1일때, 1보다 작거나 같은 숫자가 올 수 있다.
 n = int(input())
+
 print(sum(s[n]) % 10007)
