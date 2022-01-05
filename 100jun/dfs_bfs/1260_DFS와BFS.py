@@ -1,36 +1,41 @@
-from collections import deque
+# Depth First Search
+def dfs(n):
+    print(n, end=' ')
+    visited[n] = True
+    for i in graph[n]:
+        if not visited[i]:
+            dfs(i)
+
+# Breadth First Search
+def bfs(n):
+    visited[n] = True
+    queue = deque([n])
+    while queue:
+        v = queue.popleft()
+        print(v, end= ' ')
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
 import sys
-read = sys.stdin.readline
+from collections import deque
 
-def BFS(v):
-    q = deque() # 선입 선출
-    q.append(v) 
-    visit_bfs[v] = 1
-    while q:
-        v = q.popleft()
-        print(v, end= " " )
-        for i in range(1 , n+1):
-            if visit_bfs[i] == 0 and graph[v][i] == 1 :
-                q.append(i)
-                visit_bfs[i] = 1
+# node, branch, first node
+n, m, v = map(int, sys.stdin.readline().split())
+graph = [[] for _ in range(n+1)]
+visited = [False] * (n + 1)
 
-def DFS(v):
-    visit_dfs[v] = 1
-    print(v, end = " ")
-    for i in range(1, n+1):
-        if visit_dfs[i] == 0 and graph[v][i] == 1 :
-            DFS(i) 
-
-n ,m, v = map(int, read().split()) 
-
-graph = [[0] * (n + 1) for _ in range(n+1)]
-visit_bfs = [0] *(n + 1) # 
-visit_dfs = [0] * (n + 1) # 
-
+# make adjacency list
 for _ in range(m):
-  a, b = map(int, read().split())
-  graph[a][b] = graph[b][a] = 1
+    a, b = map(int, sys.stdin.readline().split())
+    graph[a].append(b)
+    graph[b].append(a)
+# sort adjacency list
+for i in range(1, n+1):
+    graph[i].sort()
 
-DFS(v)
+dfs(v)
+# initialize check list
+visited = [False] * (n + 1)
 print()
-BFS(v)
+bfs(v)
