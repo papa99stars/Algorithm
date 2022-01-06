@@ -1,6 +1,8 @@
 t = int(input())
 for i in range(t):
     s = [] 
+    # [ s[0] => 1 2 3
+    #   s[1] => a b c ] 
     n = int(input())
     for k in range(2):
         s.append(list(map(int, input().split())))

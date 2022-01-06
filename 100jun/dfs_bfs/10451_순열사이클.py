@@ -6,10 +6,9 @@ def dfs(x): #DFS 함수 정의
     if not visited[number]: #방문하지 않았다면
         dfs(number) #재귀
 
-for _ in range(int(input())):
-    N = int(input())
-    # 1부터 시작하기 위해서
-    numbers = [0] + list(map(int, input().split()))
+for _ in range(int(input())): # 테스트 케이스
+    N = int(input()) # 리스트의 총 수     
+    numbers = [0] + list(map(int, input().split())) # 1부터 시작하기 위해서
     visited = [True] + [False] * N #방문여부확인용
     result = 0
     
@@ -31,7 +30,7 @@ for _ in range(int(input())):
 #     permutation = list(map(int, input().split(" ")))
 #     graph = {n + 1 : [permutation[n]] for n in range(N)} # 순열을 그래프로
 #     # {1: [3], 2: [2], 3: [1], 4: [5], 5: [4]} 이 형태로 출력 
-    
+
 #     # dfs로 탐색하여 진행경로(trace)상에 있는 노드중에 한번 방문한 노드가 있다면
 #     # 순환구조로 판별하고 return한다. 진행경로는 갈림길마다 하나씩 reset 하므로
 #     # 해당 노드의 모든 갈래길을 다 탐색한 후에는 해당 노드를 지워주어야 한다.

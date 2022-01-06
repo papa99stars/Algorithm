@@ -1,12 +1,16 @@
-# Depth First Search
+import sys
+from collections import deque
+# dfs - 재귀
+# 스택 구현 시 재귀 함수 이용!  
 def dfs(n):
     print(n, end=' ')
     visited[n] = True
     for i in graph[n]:
         if not visited[i]:
             dfs(i)
+# dfs(n) * dfs(i)
 
-# Breadth First Search
+# bfs
 def bfs(n):
     visited[n] = True
     queue = deque([n])
@@ -17,15 +21,13 @@ def bfs(n):
             if not visited[i]:
                 queue.append(i)
                 visited[i] = True
-import sys
-from collections import deque
 
 # node, branch, first node
 n, m, v = map(int, sys.stdin.readline().split())
 graph = [[] for _ in range(n+1)]
 visited = [False] * (n + 1)
 
-# make adjacency list
+# 인접행렬 만들기 
 for _ in range(m):
     a, b = map(int, sys.stdin.readline().split())
     graph[a].append(b)

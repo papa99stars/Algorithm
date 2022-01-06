@@ -1,6 +1,6 @@
 n = int(input())
 dp = [[0]*10 for i in range(n+1)]
-for i in range(1, 10):
+for i in range(1, 10): # 계단수 1
     dp[1][i] = 1
 # 왜 2차원 배열을 사용했을까?
 # 
