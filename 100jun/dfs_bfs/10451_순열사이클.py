@@ -18,8 +18,6 @@ for _ in range(int(input())): # 테스트 케이스
             result += 1 #결과값 += 1
     print(result)
 
-
-
 # import sys
 # sys.setrecursionlimit(100000)
 # # Recursion limit을 늘려줘서 에러를 방지

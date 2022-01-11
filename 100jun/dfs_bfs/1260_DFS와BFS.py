@@ -10,9 +10,9 @@ def dfs(n):
             dfs(i)
 # dfs(n) * dfs(i)
 
-# bfs
+# bfs 재귀 사용 x
 def bfs(n):
-    visited[n] = True
+    visited[n] = True # 순회는 딱 한번만 
     queue = deque([n])
     while queue:
         v = queue.popleft()

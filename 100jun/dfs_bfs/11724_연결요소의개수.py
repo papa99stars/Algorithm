@@ -5,7 +5,7 @@ n , m = map(int, sys.stdin.readline().split())
 
 graph = [[] for _ in range(n+1) ]
 graph[0] = [0,0]
-visited = [False for _ in range(N+1)]
+visited = [False for _ in range(n+1)]
 count = 0
 
 for _ in range(m):
