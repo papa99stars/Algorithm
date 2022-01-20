@@ -9,8 +9,6 @@ for i in range(n):
             dp[i] = max(dp[i], dp[j] + list_1[i])
 print(max(dp))
 
-# 11053과 차이점은 2개가 있다
-# 1. dp를 받는 방식  
 
 
 # n=int(input())
