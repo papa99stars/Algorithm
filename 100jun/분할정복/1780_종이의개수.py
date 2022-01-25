@@ -2,21 +2,19 @@
 import sys
 read = sys.stdin.readline
 n = int(read())
-paper = [list(map(int, read().split())) for _ in range(n)]
+paper = [ list(map(int, read().split())) for _ in range(n) ]
 
-result_min = 0
-result_zero = 0
-result_plus = 0
+result_min, result_zero, result_plus = 0 , 0 , 0
 
 def cut(x,y,n):
     global result_min, result_zero , result_plus 
     check = paper[x][y]
     for i in range(x, x+n):
         for j in range(y, y+n):
-            if check != paper[i][j]:
+            if check != paper[i][j]: # 9등분하기 
                 for a in range(3):
                     for b in range(3):
-                        cut(x+n//3*a, y+n//3*b,n//3)
+                        cut( x + n//3*a, y + n//3*b, n//3 )
                 return
     if check == -1 :
         result_min += 1
@@ -29,6 +27,52 @@ cut(0,0,n)
 print(result_min)
 print(result_zero)
 print(result_plus)   
+
+# import sys
+# read = sys.stdin.readline
+
+# n = int(read())
+# minus_cnt, zero_cnt, plus_cnt = 0, 0, 0
+
+# papers = []
+# for _ in range(n):
+#     row = list(map(int, read().split()))
+#     papers.append(row)
+
+
+# def check(row, col, n):
+#     global minus_cnt, zero_cnt, plus_cnt
+#     curr = papers[row][col] 
+
+#     for i in range(row, row + n):
+#         for j in range(col, col + n):
+#             if papers[i][j] != curr:
+#                 next_n = n // 3
+#                 check(row, col, next_n)  # 1
+#                 check(row, col + next_n, next_n)  # 2
+#                 check(row, col + (2 * next_n), next_n)  # 3
+#                 check(row + next_n, col, next_n)  # 4
+#                 check(row + next_n, col + next_n, next_n)  # 5
+#                 check(row + next_n, col + (2 * next_n), next_n)  # 6
+#                 check(row + (2 * next_n), col, next_n)  # 7
+#                 check(row + (2 * next_n), col + next_n, next_n)  # 8
+#                 check(row + (2 * next_n), col + (2 * next_n), next_n)  # 9
+#                 return
+
+#     if curr == -1:
+#         minus_cnt += 1
+#     elif curr == 0:
+#         zero_cnt += 1
+#     elif curr == 1:
+#         plus_cnt += 1
+#     return
+
+
+# check(0, 0, n)
+
+# print(minus_cnt)
+# print(zero_cnt)
+# print(plus_cnt)
 
 
 # import sys 

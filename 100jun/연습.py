@@ -1,11 +1,11 @@
-n, m = map(int, input().split())
-list_1 = []
-list1 = list(map(int, input().split()))
-list2 = list(map(int, input().split()))
-list_1 = list1 + list2
-list_1.sort()
-for i in list_1:
-    print(i, end= " ")
+# n, m = map(int, input().split())
+# list_1 = []
+# list1 = list(map(int, input().split()))
+# list2 = list(map(int, input().split()))
+# list_1 = list1 + list2
+# list_1.sort()
+# for i in list_1:
+#     print(i, end= " ")
 # import sys
 # sys.setrecursionlimit(10**6)
 
