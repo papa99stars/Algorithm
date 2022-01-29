@@ -2,7 +2,7 @@ T = int(input())
 for i in range(T):
     vps = list(input())
     sum = 0
-    for i in s:    
+    for i in vps:    
         if i == "(" :
             sum += 1
         elif i == ")":
